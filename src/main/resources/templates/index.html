@@ -12,19 +12,29 @@
 </head>
 <body>
     <h1>학생등록</h1>
-    <table>
-        <tr>
-            <td>ID</td>
-            <td>hong</td>
-        </tr>
-        <tr>
-            <td>PW</td>
-            <td>1</td>
-        </tr>
-        <tr>
-            <td>Name</td>
-            <td>홍길동</td>
-        </tr>
-    </table>
+    <form action="">
+        <table>
+            <tr>
+                <td>ID</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>PW</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="회원가입">
+                    <input type="button" value="취소">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <button onClick="document.getElementById('regdate').innerHTML=Date()">가입일 출력</button>
+    <span id="regdate"></span>
 </body>
 </html>
