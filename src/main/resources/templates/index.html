@@ -28,13 +28,36 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <input type="submit" value="회원가입">
-                    <input type="button" value="취소">
+                    <input id="join-btn" type="submit" value="회원가입"/>
+                    <input type="button" value="취소"/>
                 </td>
             </tr>
         </table>
     </form>
     <button onClick="document.getElementById('regdate').innerHTML=Date()">가입일 출력</button>
     <span id="regdate"></span>
+<script>
+    document.getElementById('join-btn')
+        .addEventListener('click', e => {
+            e.preventDefault()
+            alert('클릭 성공 !')
+            $.ajax({
+                url: '/students/'+1,
+                type: 'POST',
+                data: JSON.stringify({userName:'hong',
+                                      password: '1',
+                                      nickname: '홍길동'}),
+                dataType: 'json',
+                contentType: 'application/json',
+                success: d => {
+                    alert(`회원가입 성공 !`)
+                }, 
+                error: e => {
+                    alert(`전송실패 ${e}`)
+                }
+            })
+        })
+</script>
+</body>    
 </body>
 </html>
