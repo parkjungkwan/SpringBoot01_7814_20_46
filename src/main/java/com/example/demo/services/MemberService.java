@@ -1,5 +1,7 @@
 package com.example.demo.services;
 
+import java.util.List;
+
 import com.example.demo.domains.MemberDto;
 
 import org.springframework.stereotype.Component;
@@ -14,9 +16,9 @@ public interface MemberService {
     public void removeStudent(MemberDto student);
     public MemberDto login(MemberDto student);
     public MemberDto access(MemberDto teacher);
-    public MemberDto[] fetchStudentList();
-    public MemberDto fetchStudentDetail(String userId); 
+    public List<MemberDto> fetchStudentList();
+    public MemberDto fetchStudentDetail(String memId); 
     public int sum(MemberDto grade);
     public float avg(int sum);
-    public boolean existId(String userid);
+    public boolean existId(String memid);
 }

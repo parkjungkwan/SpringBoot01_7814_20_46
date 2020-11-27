@@ -1,5 +1,7 @@
 package com.example.demo.services;
 
+import java.util.List;
+
 import com.example.demo.domains.ArticleDto;
 import com.example.demo.domains.ReplyDto;
 
@@ -12,5 +14,5 @@ public interface ArticleService {
     public void writeReply(ReplyDto reply);
     public void removeReply(ReplyDto reply);
     public ArticleDto readArticle(int artId);
-    public ReplyDto[] readReply(int artId);
+    public List<ReplyDto> readReply(int artId);
 }

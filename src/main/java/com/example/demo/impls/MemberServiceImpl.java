@@ -1,5 +1,7 @@
 package com.example.demo.impls;
 
+import java.util.List;
+
 import com.example.demo.domains.MemberDto;
 import com.example.demo.services.MemberService;
 
@@ -62,7 +64,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public MemberDto[] fetchStudentList() {
+    public List<MemberDto> fetchStudentList() {
         // TODO Auto-generated method stub
         return null;
     }
