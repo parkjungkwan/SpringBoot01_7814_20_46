@@ -8,5 +8,6 @@ import lombok.Setter;
 @Component @Getter @Setter
 public class MemberDto {
     protected int memId; 
-    protected String memName, password; 
+    protected String memName, password;
+ 
 }

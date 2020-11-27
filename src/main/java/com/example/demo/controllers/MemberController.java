@@ -21,8 +21,10 @@ public class MemberController {
     public Map<String, String> join(@PathVariable String memId,
                      @RequestBody MemberDto member){
        px.print("아이디번호 "+memId+" 번이 서버에 들어옴");
+       px.print("회원이름: "+member.getMemName());
+       px.print("비밀번호: "+member.getPassword());
        Map<String, String> map = new HashMap<>();
-       map.put("name", "홍길동");
+       map.put("memName", member.getMemName());
        return map;
     }
 }

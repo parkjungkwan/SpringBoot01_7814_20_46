@@ -16,6 +16,7 @@
 
 	<properties>
 		<java.version>11</java.version>
+		<m2e.apt.activation>disabled</m2e.apt.activation>
 	</properties>
 
 	<dependencies>
