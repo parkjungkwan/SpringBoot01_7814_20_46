@@ -4,9 +4,8 @@ import org.springframework.stereotype.Component;
 
 import lombok.Data;
 
-@Component
 @Data
-public class TeacherDto {
-    private String teaNum, email, password;
-
+@Component
+public class ManagerDto {
+    private String mgrNum, email, password;
 }

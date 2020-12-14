@@ -95,7 +95,7 @@
 
 <body>
     <div class="logo-image">                                
-       <a href="index.html"><img class="img-responsive" src="/resources/images/logo.png" alt=""> </a> 
+       <a id="home" href="#"><img class="img-responsive" src="/resources/images/logo.png" alt=""> </a> 
     </div>
      <section id="coming-soon">        
          <div class="container">
@@ -113,6 +113,7 @@
                     </div>                    
                 </div>
                 <div class="col-sm-12">
+                    <h1>교강사 등록화면</h1>
                     <div class="time-count">
                         <form action="/action_page.php" style="border:1px solid #ccc">
                             <div class="container">
@@ -186,15 +187,8 @@
     <script type="text/javascript" src="/resources/js/wow.min.js"></script>
     <script type="text/javascript" src="/resources/js/coundown-timer.js"></script>
     <script type="text/javascript" src="/resources/js/main.js"></script>
-    <script type="text/javascript">
-        //Countdown js
-        $("#countdown").countdown({
-            date: "10 march 2015 12:00:00",
-            format: "on"
-        },      
-        function() {
-            // callback function
-        });
+    <script>
+        $('#home').click(e => { location.href = '/'})
     </script>
     
 </body>
