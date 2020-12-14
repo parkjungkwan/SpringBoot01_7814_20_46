@@ -9,5 +9,6 @@ import lombok.Setter;
 public class MemberDto {
     protected int memId; 
     protected String memName, password;
+    // memId, memName, password
  
 }

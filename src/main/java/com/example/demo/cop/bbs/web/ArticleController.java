@@ -1,4 +1,4 @@
-package com.example.demo.controllers;
+package com.example.demo.cop.bbs.web;
 
 public class ArticleController {
     

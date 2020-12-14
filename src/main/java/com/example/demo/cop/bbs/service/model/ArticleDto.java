@@ -1,4 +1,4 @@
-package com.example.demo.domains;
+package com.example.demo.cop.bbs.service.model;
 
 import org.springframework.stereotype.Component;
 

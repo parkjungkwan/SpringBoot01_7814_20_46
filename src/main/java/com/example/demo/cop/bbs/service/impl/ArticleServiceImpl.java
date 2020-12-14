@@ -1,4 +1,4 @@
-package com.example.demo.impls;
+package com.example.demo.cop.bbs.service.impl;
 
 import java.util.List;
 
