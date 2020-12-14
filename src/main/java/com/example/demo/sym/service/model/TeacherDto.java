@@ -1,11 +1,11 @@
-package com.example.demo.domains;
+package com.example.demo.sym.service.model;
 
 import org.springframework.stereotype.Component;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Component @Getter @Setter
-public class TeacherDto extends MemberDto{
-    protected String accessKey;
+@Component
+@Data
+public class TeacherDto {
+
 }

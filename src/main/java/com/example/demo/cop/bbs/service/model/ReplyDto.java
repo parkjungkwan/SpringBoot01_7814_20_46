@@ -2,10 +2,10 @@ package com.example.demo.cop.bbs.service.model;
 
 import org.springframework.stereotype.Component;
 
-import lombok.Setter;
-import lombok.Getter;
+import lombok.Data;
 
-@Component @Getter @Setter
-public class ReplyDto extends ArticleDto{
-    protected int replyId;
+@Component
+@Data
+public class ReplyDto extends ArticleDto {
+
 }

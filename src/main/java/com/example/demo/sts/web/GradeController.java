@@ -1,8 +1,8 @@
-package com.example.demo.cop.bbs.web;
+package com.example.demo.sts.web;
 
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class ArticleController {
+public class GradeController {
 
 }
