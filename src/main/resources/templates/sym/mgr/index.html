@@ -14,6 +14,23 @@
 	<title>AdminKit Demo - Web UI Kit &amp; Dashboard Template</title>
 
 	<link href="/mgr/css/app.css" rel="stylesheet">
+	<style>
+		table {
+		  font-family: arial, sans-serif;
+		  border-collapse: collapse;
+		  width: 100%;
+		}
+		
+		td, th {
+		  border: 1px solid #dddddd;
+		  text-align: left;
+		  padding: 8px;
+		}
+		
+		tr:nth-child(even) {
+		  background-color: #dddddd;
+		}
+	</style>
 </head>
 
 <body>
@@ -36,8 +53,8 @@
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="pages-profile.html">
-              <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
+						<a id="students" class="sidebar-link" href="#">
+              <i class="align-middle" data-feather="user"></i> <span class="align-middle">학생목록</span>
             </a>
 					</li>
 
@@ -577,6 +594,43 @@
 
 	<script src="/mgr/js/vendor.js"></script>
 	<script src="/mgr/js/app.js"></script>
+	<script>
+		$('#students').click( e => {
+			alert(`click !!`)
+			// stuNum, userid, password, name, ssn, regDate, subject
+			
+			
+			$.getJSON(`/students`, d => {
+				let tr = ''
+				if(d.length != 0){
+					let i = 0
+					$(`main`).html(`<h2>학생 목록</h2>
+							<table>
+							<thead>
+							<tr>
+								<th>학번</th>
+								<th>아이디</th>
+								<th>이름</th>
+								<th>생년월일</th>
+								<th>등록일</th>
+								<th>수강과목</th>
+							</tr>
+							</thead>
+							<tbody>
+							${tr}
+							</tbody>
+							</table>
+					`)
+
+				}else{
+					tr = '<td colspan="6"> 조회내용이 없습니다 </td>'
+				}
+			})
+			
+			
+			
+		})
+	</script>
 
 	<script>
 		$(function() {

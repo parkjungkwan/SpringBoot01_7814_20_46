@@ -1,5 +1,7 @@
 package com.example.demo.cmm.mpr;
 
+import java.util.List;
+
 import com.example.demo.uss.service.model.StudentDto;
 
 import org.springframework.stereotype.Repository;
@@ -12,5 +14,7 @@ public interface StudentMapper {
     public StudentDto login(StudentDto student);
 
     public StudentDto selectById(String userid);
+
+    public List<StudentDto> selectAll();
 
 }
