@@ -54,13 +54,13 @@
 
 					<li class="sidebar-item">
 						<a id="students" class="sidebar-link" href="#">
-              <i class="align-middle" data-feather="user"></i> <span class="align-middle">학생목록</span>
+              <i class="align-middle" data-feather="user"></i> <span class="align-middle">학습자목록</span>
             </a>
 					</li>
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="pages-settings.html">
-              <i class="align-middle" data-feather="settings"></i> <span class="align-middle">Settings</span>
+              <i class="align-middle" data-feather="settings"></i> <span class="align-middle">교강사목록</span>
             </a>
 					</li>
 
@@ -604,7 +604,7 @@
 						tr +=`<tr>`
 							+`<td>${d[i].stuNum}</td>`
 							+`<td>${d[i].userid}</td>`
-							+`<td>${d[i].name}</td>`
+							+`<td><a href="#" class="names" id="${d[i].userid}">${d[i].name}</a></td>`
 							+`<td>${d[i].ssn}</td>`
 							+`<td>${d[i].regDate}</td>`
 							+`<td>${d[i].subject}</td>`
@@ -613,7 +613,7 @@
 				}else{
 					tr = `<td colspan="6"> 조회내용이 없습니다 </td>`
 				}
-				$(`main`).html(`<h2>학생 목록</h2>
+				$(`main`).html(`<h2>학습자 목록</h2>
 							<table>
 							<thead>
 							<tr>
@@ -630,6 +630,12 @@
 							</tbody>
 							</table>
 					`)
+				$('.names').each(function(i){
+					$(this).click(e => {
+						localStorage.setItem("searchId", `${this.id}`)
+						location.href = '/transfer/sym/mgr/student'
+					})
+				})
 			})
 			
 			
