@@ -7,6 +7,10 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface StudentMapper {
 
-    int insert(StudentDto student);
+    public int insert(StudentDto student);
+
+    public StudentDto login(StudentDto student);
+
+    public StudentDto selectById(String userid);
 
 }

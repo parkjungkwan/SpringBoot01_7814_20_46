@@ -509,6 +509,13 @@
 
 	<script src="/mgr/js/vendor.js"></script>
 	<script src="/mgr/js/app.js"></script>
+	<script>
+		const userid = sessionStorage.getItem('userid')
+		$.getJSON(`/students/${userid}`, d => {
+			// stuNum, userid, password, name, ssn, regDate, subject, profileImage	
+			alert(`프로필 진입`)
+		})
+	</script>
 
 </body>
 

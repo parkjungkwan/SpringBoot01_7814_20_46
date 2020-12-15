@@ -7,4 +7,16 @@
         #{userid}, #{password}, #{name}, #{ssn}, #{regDate}, #{subject}
     )
    </insert>
+   <select id="login" resultType="com.example.demo.uss.service.model.StudentDto"
+   parameterType="com.example.demo.uss.service.model.StudentDto">
+    select userid, password, name, ssn, reg_date redDate, subject 
+    from students 
+    where userid like #{userid} and password like #{password}
+   </select>
+   <select id="selectById" resultType="com.example.demo.uss.service.model.StudentDto"
+   parameterType="string">
+    select userid, password, name, ssn, reg_date redDate, subject 
+    from students 
+    where userid like #{value}
+   </select>
 </mapper>

@@ -19,4 +19,14 @@ public class StudentServiceImpl implements StudentService {
         return studentMapper.insert(student);
     }
 
+    @Override
+    public StudentDto login(StudentDto student) {
+        return studentMapper.login(student);
+    }
+
+    @Override
+    public StudentDto detail(String userid) {
+        return studentMapper.selectById(userid);
+    }
+
 }

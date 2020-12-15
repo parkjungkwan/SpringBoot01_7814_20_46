@@ -9,4 +9,8 @@ public interface StudentService {
 
     public int register(StudentDto student);
 
+    public StudentDto login(StudentDto student);
+
+    public StudentDto detail(String userid);
+
 }

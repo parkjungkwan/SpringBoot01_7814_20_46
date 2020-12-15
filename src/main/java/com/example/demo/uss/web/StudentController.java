@@ -31,4 +31,22 @@ public class StudentController {
         return map;
     }
 
+    @PostMapping("/students/login")
+    public Map<?, ?> login(@RequestBody StudentDto student) {
+        logger.info("로그인 정보: " + student.toString());
+        var map = new HashMap<>();
+        StudentDto result = studentService.login(student);
+        map.put("message", (result != null) ? "SUCCESS" : "FAILURE");
+        map.put("sessionUser", result);
+        logger.info("로그인 성공정보: " + result.toString());
+        return map;
+
+    }
+
+    @GetMapping("/students/{userid}")
+    public StudentDto profile(@PathVariable String userid) {
+        logger.info("프로필 정보: " + userid);
+        return studentService.detail(userid);
+    }
+
 }
