@@ -7,5 +7,5 @@ import lombok.Data;
 @Data
 @Component
 public class ArticleDto {
-
+    private String artNum, title, content, count, writerNum;
 }

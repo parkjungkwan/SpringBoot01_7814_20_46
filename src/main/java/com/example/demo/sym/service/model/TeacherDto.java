@@ -7,6 +7,6 @@ import lombok.Data;
 @Component
 @Data
 public class TeacherDto {
-    private String teaNum, email, password;
+    private String teaNum, name, password, subject;
 
 }

@@ -7,5 +7,5 @@ import lombok.Data;
 @Component
 @Data
 public class GradeDto {
-
+    private String gradeNum, subject, score, grade, stuNum;
 }

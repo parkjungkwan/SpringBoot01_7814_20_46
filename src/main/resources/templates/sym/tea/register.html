@@ -113,7 +113,7 @@
                     </div>                    
                 </div>
                 <div class="col-sm-12">
-                    <h1>관리자 등록화면</h1>
+                    <h1>교강사 등록화면</h1>
                     <div class="time-count">
                         <form style="border:1px solid #ccc">
                             <div class="container">
@@ -121,16 +121,16 @@
                               <p>Please fill in this form to create an account.</p>
                               <hr>
                           
-                              <label for="email"><b>Email</b></label>
-                              <input type="text" placeholder="Enter Email" id="email" required>
+                              <label for="name"><b>이 름</b></label>
+                              <input type="text" placeholder="이름 등록" id="name" required>
                           
-                              <label for="psw"><b>Password</b></label>
-                              <input type="password" placeholder="Enter Password" id="password" required>
+                              <label for="psw"><b>비밀번호</b></label>
+                              <input type="password" placeholder="비번 등록" id="password" required>
                           
-                              <label for="psw-repeat"><b>Repeat Password</b></label>
-                              <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                              <label for="psw-repeat"><b>담당과목</b></label>
+                              <input type="text" placeholder="과목 등록" id="subject" required>
                               
-                              <label>
+                              <label목
                                 <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
                               </label>
                               
@@ -138,7 +138,7 @@
                           
                               <div class="clearfix">
                                 <button type="button" class="cancelbtn">Cancel</button>
-                                <button type="submit" id="signupbtn" class="signupbtn">Sign Up</button>
+                                <button type="button" id="signupbtn" class="signupbtn">Sign Up</button>
                               </div>
                             </div>
                           </form>
@@ -189,26 +189,6 @@
     <script type="text/javascript" src="/resources/js/main.js"></script>
     <script>
         $('#home').click(e => { location.href = '/'})
-        $('#signupbtn').click(e => {
-            e.preventDefault()
-            $.ajax({
-                url: `/managers`,
-                type: 'POST',
-                data: JSON.stringify({
-                    email: $('#email').val(),
-                    password: $('#password').val()
-                }),
-                dataType: 'json',
-                contentType: 'application/json',
-                success: d => {
-
-                },
-                error: e => {
-                    console.log(`관리자등록 실패: ${e.responseText}`)
-                    location.href = '/move/cmm/404'
-                }
-            })
-        })
     </script>
     
 </body>
