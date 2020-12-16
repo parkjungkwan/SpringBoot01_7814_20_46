@@ -20,4 +20,8 @@
     update teachers set email = #{email}, subject = #{subject} 
     where tea_num like #{teaNum}
    </update>
+   <delete id="delete" parameterType="com.example.demo.sym.service.model.TeacherDto">
+    delete from teachers 
+    where tea_num like #{teaNum}
+   </delete>
 </mapper>

@@ -34,4 +34,9 @@ public class TeacherServiceImpl implements TeacherService {
     public int update(TeacherDto teacher) {
         return teacherMapper.update(teacher);
     }
+
+    @Override
+    public int delete(TeacherDto teacher) {
+        return teacherMapper.delete(teacher);
+    }
 }

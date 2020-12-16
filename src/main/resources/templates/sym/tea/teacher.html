@@ -544,8 +544,8 @@
 						type: `PUT`,
 						data: JSON.stringify({
 							teaNum: d.teaNum,
-							subject: ($(`#changeSubject`).val() === d.subject) ? d.subject: $(`#changeSubject`).val()  ,
-							email: ( $(`#changeEmail`).val() === d.email) ? d.email: $(`#changeEmail`).val()
+							subject: $(`#changeSubject`).val(),
+							email: $(`#changeEmail`).val()
 
 						}),
 						dataType: `json`,
@@ -564,7 +564,26 @@
 				})
 			})
 			$(`#info-delete`).click(e => {
-				alert(`삭제클릭`)
+				$.ajax({
+					url: `/teachers`,
+					type: `DELETE`,
+					data: JSON.stringify({
+						teaNum: d.teaNum
+					}),
+					dataType: `json`,
+					contentType: `application/json`,
+					success: d2 => {
+						if(d2.message === 'SUCCESS'){
+							location.href = `/transfer/sym/mgr/index`
+						}else{
+							alert(`삭제 실패`)
+						}
+					},
+					error: e => {
+						alert(`AJAX 삭제 실패`)
+						
+					}
+				})
 			})						 
 		}) // getJSON 의 scope
 	</script>
