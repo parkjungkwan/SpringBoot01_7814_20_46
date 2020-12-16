@@ -59,9 +59,9 @@
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="pages-settings.html">
-              <i class="align-middle" data-feather="settings"></i> <span class="align-middle">교강사목록</span>
-            </a>
+						<a id="teachers" class="sidebar-link" href="#">
+							<i class="align-middle" data-feather="settings"></i> <span class="align-middle">교강사목록</span>
+						</a>
 					</li>
 
 					<li class="sidebar-item">
@@ -640,6 +640,11 @@
 			
 			
 			
+		})
+		$(`#teachers`).click(e => {
+			$.getJSON(`/teachers`, d=>{
+				alert(`교강사 수 ${d.length}`)
+			})
 		})
 	</script>
 
