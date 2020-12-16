@@ -13,4 +13,6 @@ public interface TeacherMapper {
     public List<TeacherDto> selectAll();
 
     public TeacherDto selectById(String teaNum);
+
+    public int update(TeacherDto teacher);
 }

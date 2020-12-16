@@ -533,11 +533,35 @@
 									</ul>`)
 		
 			$(`#info-update`).click(e => {
-				alert(`수정클릭`)
-				$(`#updateSubject`).html(`<input id="changeSubject" type="text" placeholder="${d.subject}">`)
-				$(`#updateEmail`).html(`<span data-feather="briefcase" class="feather-sm mr-1"></span> 이메일 : <input type="text" placeholder="${d.email}">`)
+				$(`#updateSubject`).html(`<input id="changeSubject" type="text" value="${d.subject}" placeholder="${d.subject}">`)
+				$(`#updateEmail`).html(`<span data-feather="briefcase" class="feather-sm mr-1"></span> 이메일 : <input id="changeEmail" type="text" value="${d.email}"  placeholder="${d.email}">`)
 				$(`#updateAddr`).html(`<span data-feather="map-pin" class="feather-sm mr-1"></span> 주소 : <input type="text" placeholder="서울"><br/>
-				<button> 수정확인 </button><button> 수정취소 </button>`)
+				<button id="updateConfirm"> 수정확인 </button><button id="updateCancel"> 수정취소 </button>`)
+				$(`#updateConfirm`).click(e => {
+					alert(`수정확인`)
+					$.ajax({
+						url: `/teachers`,
+						type: `PUT`,
+						data: JSON.stringify({
+							teaNum: d.teaNum,
+							subject: ($(`#changeSubject`).val() === d.subject) ? d.subject: $(`#changeSubject`).val()  ,
+							email: ( $(`#changeEmail`).val() === d.email) ? d.email: $(`#changeEmail`).val()
+
+						}),
+						dataType: `json`,
+						contentType: `application/json`,
+						success: d2 => {
+							if(d2.message === 'SUCCESS'){
+								location.href= `/transfer/sym/tea/teacher`
+								// 현재 나의 위치로 다시 부르는 것: 재귀호출
+							}else{
+								alert(`수정에 실패했습니다.`)
+								location.href= `/transfer/sym/tea/teacher`
+							}
+						},
+						error: e => { alert(`수정오류`)}
+					})
+				})
 			})
 			$(`#info-delete`).click(e => {
 				alert(`삭제클릭`)
