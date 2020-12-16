@@ -2,6 +2,7 @@ package com.example.demo.sym.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,5 +39,11 @@ public class TeacherController {
     public List<?> list() {
         logger.info("교강사 목록 요청 진입");
         return teacherService.list();
+    }
+
+    @GetMapping("/{teaNum}")
+    public TeacherDto findById(@PathVariable String teaNum) {
+        logger.info("교강사번호 조회 요청 진입 : 조회번호 =" + teaNum);
+        return teacherService.findById(teaNum);
     }
 }

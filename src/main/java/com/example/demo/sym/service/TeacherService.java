@@ -12,4 +12,6 @@ public interface TeacherService {
     public int register(TeacherDto teacher);
 
     public List<?> list();
+
+    public TeacherDto findById(String teaNum);
 }
